@@ -697,6 +697,8 @@ macOS / Linux：
 
 ## 12. 当时的下一阶段建议（历史开发记录）
 
+> **Historical note:** The following section records recommendations made at the end of this personal development snapshot. The team project has since been completed in the final repository.
+
 当前版本已经适合作为**阶段性增量提交**。在继续扩功能之前，最合理的下一阶段应当是：
 
 ### 前端整理 sprint
