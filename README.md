@@ -1,8 +1,158 @@
-# 文化遗产交流平台（Heritage Exchange）
+# Heritage Exchange — Personal Contribution Snapshot
 
-这是一个面向**文化遗产内容展示、投稿、审核与社区交流**场景的 Spring Boot 项目。当前仓库版本基于 **JWT 鉴权链**，并已在此前基础上，增量完成了管理员后台、文章审核流、用户管理、贡献者申请流，以及一轮围绕后台效率和权限边界的稳定性增强。
+A backend-focused development snapshot from **Heritage Exchange**, a cultural heritage content platform developed as a **9-member team project** for CPT202.
 
-本 README 重点记录**这一轮增量开发后的系统状态**，便于作为阶段性提交说明、联调依据与后续前端整理 sprint 的基线文档。
+> **Project Context**
+>
+> This repository contains my personal development snapshot and contribution history.  
+> It does **not** represent the final team submission.
+>
+> The completed project is available in the team repository:  
+> **[Mazetracer/Heritage-Exchange →](https://github.com/Mazetracer/Heritage-Exchange)**
+
+My work focused primarily on **administrative workflows, content-review lifecycle management, role and permission control, JWT-based authentication, and backend regression testing**.
+
+Two major development rounds from this repository were merged into the final team project through pull requests.
+
+**Tech:** Java · Spring Boot · Spring Security · JWT · Spring Data JPA · REST APIs · MockMvc
+
+---
+
+## My Contributions
+
+### Content Review & Publishing Workflow
+
+Implemented the core article moderation lifecycle:
+
+```text
+DRAFT
+  ↓
+PENDING_REVIEW
+  ├── APPROVE → PUBLISHED
+  └── REJECT  → REJECTED
+
+PUBLISHED → ARCHIVED → PUBLISHED
+```
+
+This work included:
+
+- article submission for review;
+- administrator approve / reject operations;
+- rejection reasons and review metadata;
+- archive and restore workflows;
+- ownership restrictions for unpublished content;
+- public visibility rules for published content.
+
+### Administrative Content Management
+
+Developed the administrative article-management workflow, including:
+
+- status-based filtering;
+- title search;
+- sorting by update, submission, and review time;
+- article-detail inspection;
+- approve / reject moderation actions;
+- archive / restore operations;
+- dedicated pending-review handling;
+- pagination support for administrative article lists.
+
+### User Roles & Contributor Applications
+
+Implemented administrative and permission-related workflows around the platform's existing role model:
+
+- `USER`
+- `CONTRIBUTOR`
+- `ADMIN`
+
+My contribution included:
+
+- user search and role filtering;
+- controlled `USER ↔ CONTRIBUTOR` role transitions;
+- protection against unauthorized `ADMIN` role changes;
+- contributor permission applications;
+- administrator approve / reject workflows;
+- automatic promotion to `CONTRIBUTOR` after approval.
+
+### JWT Authentication & Authorization
+
+Migrated the development branch from lightweight header-based user identification to **JWT-based authentication integrated with Spring Security**.
+
+The implementation included:
+
+- JWT generation and validation;
+- Bearer-token authentication;
+- integration of a JWT filter into the Spring Security filter chain;
+- endpoint-level authorization boundaries;
+- administrator-only API protection;
+- authenticated access control for protected operations;
+- inactive-account access restrictions.
+
+### Regression & API Testing
+
+Added Spring Boot / MockMvc regression coverage for critical backend workflows, including:
+
+- public article visibility;
+- content ownership restrictions;
+- draft and rejected-post editing;
+- review submission;
+- approve / reject workflows;
+- archive / restore operations;
+- administrator authorization;
+- user-role transitions;
+- contributor applications;
+- JWT login responses;
+- Bearer-token access to protected endpoints.
+
+---
+
+## Contribution Traceability
+
+These contributions were integrated into the completed team repository through two major pull requests.
+
+### Development Round 1
+
+**[PR #1 — Feature/admin incremental update](https://github.com/Mazetracer/Heritage-Exchange/pull/1)**
+
+Focused on:
+
+- article review workflow;
+- administrative article management;
+- pending review queue;
+- administrative user management;
+- contributor application workflow;
+- initial API-level regression coverage.
+
+### Development Round 2
+
+**[PR #2 — Feature/admin incremental update](https://github.com/Mazetracer/Heritage-Exchange/pull/2)**
+
+Focused on:
+
+- JWT authentication migration;
+- Spring Security authorization;
+- authenticated backend integration;
+- administrative workflow stabilization;
+- article-management pagination;
+- JWT and backend regression testing.
+
+The final integrated project continued to evolve after these contributions through additional team development and final integration.
+
+**Final team repository:**  
+[github.com/Mazetracer/Heritage-Exchange](https://github.com/Mazetracer/Heritage-Exchange)
+
+---
+
+## Repository Scope
+
+This repository should be read as a **personal development snapshot**, not as an independent copy of the final Heritage Exchange platform.
+
+The sections below preserve the technical state and development notes from my contribution cycle. Features introduced or modified later by other team members are documented in the final team repository rather than claimed here as individual work.
+
+---
+
+## Development Snapshot
+
+The following sections preserve the original technical documentation from this development snapshot, including authentication, authorization, content workflows, administrative functionality, API structure, and testing notes.
 
 ---
 
