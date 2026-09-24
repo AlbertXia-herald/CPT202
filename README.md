@@ -152,9 +152,14 @@ The sections below preserve the technical state and development notes from my co
 
 ## Development Snapshot
 
-The following sections preserve the original technical documentation from this development snapshot, including authentication, authorization, content workflows, administrative functionality, API structure, and testing notes.
+The original technical notes from this development branch are preserved below for implementation reference.
 
----
+They document the state of the repository during my contribution cycle, including authentication, authorization, content workflows, administrative functions, APIs, testing, and deferred work.
+
+<details>
+<summary><strong>Expand detailed development notes (Chinese)</strong></summary>
+
+<br>
 
 ## 1. 当前版本定位
 
@@ -690,7 +695,7 @@ macOS / Linux：
 
 ---
 
-## 12. 下一阶段建议
+## 12. 当时的下一阶段建议（历史开发记录）
 
 当前版本已经适合作为**阶段性增量提交**。在继续扩功能之前，最合理的下一阶段应当是：
 
@@ -712,7 +717,7 @@ macOS / Linux：
 
 ---
 
-## 13. 阶段性结论
+## 13. 当时的阶段性结论（历史开发记录）
 
 到当前这一轮为止，项目已经从“基础内容平台”演进为一套具备以下能力的**可运行、可联调、可继续演进的 JWT 版本文化遗产交流平台**：
 
@@ -729,3 +734,4 @@ macOS / Linux：
 - 管理员相关核心模块已形成闭环
 - 下一步更适合进入前端整理和体验优化，而不是继续无边界扩功能
 
+</details>
